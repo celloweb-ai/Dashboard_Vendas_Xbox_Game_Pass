@@ -6,6 +6,10 @@
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## 🔗 Acesso Rápido
+
+📊 **[Baixar Planilha Excel](https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass/raw/main/data/Base%20Dados%20Xbox%20Game%20Pass.xlsx)** - Dashboard completo com dados de assinaturas
+
 ## 🎯 Objetivo
 
 Este projeto apresenta uma solução completa de análise de dados de assinaturas do Xbox Game Pass, transformando dados brutos em insights visuais e acionáveis para tomada de decisões estratégicas. O dashboard desenvolvido em Excel permite monitorar KPIs de vendas, receitas, renovações e desempenho de add-ons.
@@ -29,6 +33,11 @@ Dashboard_Vendas_Xbox_Game_Pass/
 ### Base de Dados
 
 O dataset contém **295 registros de assinaturas** do Xbox Game Pass cobrindo o período de **janeiro a dezembro de 2024**, com IDs de assinantes variando de **3231 a 3525**.
+
+**📂 Arquivos Disponíveis:**
+- **[Base Dados Xbox Game Pass.xlsx](https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass/blob/main/data/Base%20Dados%20Xbox%20Game%20Pass.xlsx)** - Planilha Excel completa
+- **[base_dados.csv](https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass/blob/main/data/base_dados.csv)** - Formato CSV para análise
+- **[sheets_data.json](https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass/blob/main/data/sheets_data.json)** - Formato JSON estruturado
 
 ### Estrutura dos Dados
 
@@ -130,16 +139,17 @@ O dashboard utiliza as cores oficiais da marca Xbox para manter consistência vi
    ```
 
 3. **Abra a planilha Excel:**
-   - Arquivo: `Base Dados Xbox Game Pass.xlsx`
+   - **Download direto**: [Base Dados Xbox Game Pass.xlsx](https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass/raw/main/data/Base%20Dados%20Xbox%20Game%20Pass.xlsx)
+   - Ou navegue até a pasta `data/` e abra `Base Dados Xbox Game Pass.xlsx`
    - Explore as abas disponíveis
 
 ### Formatos Disponíveis
 
 Os dados estão disponíveis em 3 formatos:
 
-1. **Excel (`.xlsx`)**: Formato original com formatação e fórmulas
-2. **CSV (`.csv`)**: Formato universal para análise em Python, R, etc.
-3. **JSON (`.json`)**: Formato estruturado para APIs e aplicações web
+1. **[Excel (`.xlsx`)](https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass/raw/main/data/Base%20Dados%20Xbox%20Game%20Pass.xlsx)**: Formato original com formatação e fórmulas
+2. **[CSV (`.csv`)](https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass/raw/main/data/base_dados.csv)**: Formato universal para análise em Python, R, etc.
+3. **[JSON (`.json`)](https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass/raw/main/data/sheets_data.json)**: Formato estruturado para APIs e aplicações web
 
 ### Exemplo de Uso em Python
 
