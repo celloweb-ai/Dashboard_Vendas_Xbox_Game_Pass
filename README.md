@@ -1,178 +1,257 @@
 # 📊 Dashboard de Vendas - Xbox Game Pass
 
-> Projeto de análise e visualização de dados de assinaturas do Xbox Game Pass desenvolvido em Excel
+> Análise e visualização de dados de assinaturas do Xbox Game Pass com dashboard interativo em Excel
 
 [![Excel](https://img.shields.io/badge/Excel-217346?style=flat&logo=microsoft-excel&logoColor=white)](https://www.microsoft.com/excel)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🎯 Objetivo
 
-Este projeto tem como objetivo criar um dashboard de vendas com foco na organização e visualização de dados de assinaturas do Xbox Game Pass. O desafio consiste em transformar dados brutos em informações visuais claras e úteis, permitindo uma análise eficaz do desempenho de vendas e a tomada de decisões baseadas em dados.
+Este projeto apresenta uma solução completa de análise de dados de assinaturas do Xbox Game Pass, transformando dados brutos em insights visuais e acionáveis para tomada de decisões estratégicas. O dashboard desenvolvido em Excel permite monitorar KPIs de vendas, receitas, renovações e desempenho de add-ons.
 
 ## 📁 Estrutura do Repositório
 
 ```
-dashboard-vendas-xbox-game-pass/
+Dashboard_Vendas_Xbox_Game_Pass/
 │
 ├── data/
-│   ├── base.xlsx                      # Base de dados bruta
-│   └── dashboard_xbox_finalizado.xlsx # Dashboard completo
+│   ├── Base Dados Xbox Game Pass.xlsx  # Planilha original com dados brutos
+│   ├── base_dados.csv                   # Base de dados em formato CSV
+│   └── sheets_data.json                 # Dados estruturados em JSON
 │
-├── README.md                          # Documentação do projeto
-└── LICENSE                            # Licença MIT
+├── README.md                            # Documentação do projeto
+└── LICENSE                              # Licença MIT
 ```
 
 ## 📊 Sobre os Dados
 
-### Base de Dados (`base.xlsx`)
+### Base de Dados
 
-A base contém **295 registros de assinaturas** do Xbox Game Pass de janeiro a dezembro de 2024, com as seguintes informações:
+O dataset contém **295 registros de assinaturas** do Xbox Game Pass cobrindo o período de **janeiro a dezembro de 2024**, com IDs de assinantes variando de **3231 a 3525**.
 
-#### Campos Principais:
+### Estrutura dos Dados
 
-- **Subscriber ID**: Identificador único do assinante (3231-3525)
-- **Name**: Nome do assinante
-- **Plan**: Tipo de plano (Ultimate, Core, Standard)
-- **Start Date**: Data de início da assinatura
-- **Auto Renewal**: Renovação automática (Yes/No)
-- **Subscription Price**: Preço da assinatura base
-- **Subscription Type**: Periodicidade (Monthly, Quarterly, Annual)
+| Campo | Tipo | Descrição |
+|-------|------|-----------|
+| **Subscriber ID** | Numérico | Identificador único do assinante (3231-3525) |
+| **Name** | Texto | Nome completo do assinante |
+| **Plan** | Categórico | Tipo de plano (Ultimate, Standard, Core) |
+| **Start Date** | Data | Data de início da assinatura (DD/MM/YYYY) |
+| **Auto Renewal** | Booleano | Status de renovação automática (Yes/No) |
+| **Subscription Price** | Numérico | Preço base da assinatura ($) |
+| **Subscription Type** | Categórico | Periodicidade (Monthly, Quarterly, Annual) |
+| **EA Play Season Pass** | Numérico | Valor do add-on EA Play ($0 ou $30) |
+| **Minecraft Season Pass** | Numérico | Valor do add-on Minecraft ($0 ou $20) |
+| **Coupon Value** | Numérico | Valor do cupom de desconto aplicado ($) |
+| **Total Value** | Numérico | Valor final após descontos ($) |
 
-#### Add-ons Disponíveis:
+### Planos Disponíveis
 
-- **EA Play Season Pass**: $30
-- **Minecraft Season Pass**: $20
+| Plano | Preço Base | Características | Add-ons Disponíveis |
+|-------|------------|------------------|---------------------|
+| **Ultimate** | $15 | Acesso completo + Cloud Gaming + multiplayer | EA Play ($30) + Minecraft ($20) |
+| **Standard** | $10 | Acesso padrão à biblioteca de jogos | Minecraft ($20) |
+| **Core** | $5 | Multiplayer online básico | Nenhum |
 
-#### Descontos:
+### Tipos de Assinatura
 
-- **Coupon Value**: Valor do cupom de desconto aplicado
-- **Total Value**: Valor final após descontos
+- **Monthly (Mensal)**: Cobrança mensal recorrente
+- **Quarterly (Trimestral)**: Cobrança a cada 3 meses
+- **Annual (Anual)**: Cobrança anual com desconto
 
-### Planos e Preços
+## 📈 Análises e Insights
 
-| Plano | Preço Base | Características |
-|-------|------------|------------------|
-| **Ultimate** | $15 | Acesso completo + EA Play + Minecraft |
-| **Standard** | $10 | Acesso padrão + Season Passes opcionais |
-| **Core** | $5 | Plano básico |
+### Métricas Principais
+
+O dashboard permite análise de:
+
+1. **Faturamento Total**
+   - Por tipo de plano (Ultimate, Standard, Core)
+   - Por periodicidade (Mensal, Trimestral, Anual)
+   - Com/sem renovação automática
+
+2. **Desempenho de Add-ons**
+   - Vendas de EA Play Season Pass (exclusivo Ultimate)
+   - Vendas de Minecraft Season Pass (Standard e Ultimate)
+   - Receita adicional gerada por add-ons
+
+3. **Taxa de Renovação**
+   - Percentual de assinaturas com auto-renovação ativa
+   - Comparação entre planos
+
+4. **Impacto de Cupons**
+   - Valor total de descontos aplicados
+   - Análise de rentabilidade por tipo de cupom
+
+5. **Sazonalidade**
+   - Distribuição de assinaturas ao longo de 2024
+   - Períodos de maior/menor aquisição
+
+### KPIs do Dashboard
+
+- ✅ Receita Total: Soma de todos os valores finais
+- ✅ Ticket Médio: Valor médio por assinatura
+- ✅ Taxa de Conversão: Percentual de renovação automática
+- ✅ Receita por Add-on: Contribuição dos Season Passes
+- ✅ Distribuição de Planos: Percentual por categoria
+
+## 🎨 Identidade Visual
 
 ### Paleta de Cores Xbox
 
-O dashboard utiliza as cores oficiais da marca Xbox:
+O dashboard utiliza as cores oficiais da marca Xbox para manter consistência visual:
 
-- **Verde Principal**: `#9BC848`, `#22C55E`
-- **Menus**: `#2AE6B1`, `#5BF6A8`
-- **Zona Negativa**: `#E8E6E9`
+- **Verde Principal**: `#107C10` (Xbox Verde)
+- **Verde Claro**: `#9BC848`, `#22C55E`
+- **Accent**: `#2AE6B1`, `#5BF6A8`
+- **Background**: `#E8E6E9`
+- **Texto**: `#1A1A1A`
 
-## 📈 Análises Implementadas
-
-O dashboard finalizado (`dashboard_xbox_finalizado.xlsx`) contém as seguintes análises:
-
-### 1. Faturamento Total por Tipo de Assinatura
-
-**Assinaturas Mensais:**
-- Faturamento Total: **$3,571**
-- Com auto-renovação: $747
-- Sem auto-renovação: $2,824
-
-### 2. Vendas de Add-ons
-
-**EA Play Season Pass:**
-- Total de assinaturas: **1,350**
-- Disponível apenas para plano Ultimate
-
-**Minecraft Season Pass:**
-- Total de assinaturas: **1,800**
-- Disponível para planos Standard e Ultimate
-- Standard: 900 assinaturas
-- Ultimate: 900 assinaturas
-
-### 3. Perguntas de Negócio Respondidas
-
-✅ **Pergunta 1**: Qual o faturamento total de vendas de planos anuais?
-✅ **Pergunta 2**: Qual o faturamento total segmentado por auto-renovação?
-✅ **Pergunta 3**: Total de vendas de assinaturas do EA Play Season Pass
-✅ **Pergunta 4**: Total de vendas de assinaturas do Minecraft Season Pass
-
-## 🚀 Como Reproduzir
+## 🚀 Como Utilizar
 
 ### Pré-requisitos
 
-- Microsoft Excel 2016 ou superior
-- Conhecimento básico de tabelas dinâmicas
-- Conhecimento básico de gráficos no Excel
+- Microsoft Excel 2016 ou superior (recomendado Excel 365)
+- Python 3.8+ (opcional, para processamento de dados)
+- Conhecimento básico de tabelas dinâmicas e gráficos
 
-### Passo a Passo
+### Instalação
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/celloweb-ai/dashboard-vendas-xbox-game-pass.git
-   cd dashboard-vendas-xbox-game-pass
+   git clone https://github.com/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass.git
+   cd Dashboard_Vendas_Xbox_Game_Pass
    ```
 
-2. **Abra a base de dados:**
-   - Navegue até a pasta `data/`
-   - Abra o arquivo `base.xlsx`
+2. **Acesse os dados:**
+   ```bash
+   cd data
+   ```
 
-3. **Explore o dashboard:**
-   - Abra o arquivo `dashboard_xbox_finalizado.xlsx`
-   - Navegue pelas abas:
-     - **Assets**: Paleta de cores e logos
-     - **Bases**: Dados brutos
-     - **Cálculos**: Tabelas dinâmicas e métricas
-     - **Dashboard**: Visualizações finais
+3. **Abra a planilha Excel:**
+   - Arquivo: `Base Dados Xbox Game Pass.xlsx`
+   - Explore as abas disponíveis
 
-4. **Personalize (opcional):**
-   - Modifique os dados na aba "Bases"
-   - Atualize as tabelas dinâmicas (Dados → Atualizar Tudo)
-   - Os gráficos serão atualizados automaticamente
+### Formatos Disponíveis
 
-## 🛠️ Tecnologias Utilizadas
+Os dados estão disponíveis em 3 formatos:
 
-- **Microsoft Excel**: Ferramenta principal
-- **Tabelas Dinâmicas**: Análise e agregação de dados
+1. **Excel (`.xlsx`)**: Formato original com formatação e fórmulas
+2. **CSV (`.csv`)**: Formato universal para análise em Python, R, etc.
+3. **JSON (`.json`)**: Formato estruturado para APIs e aplicações web
+
+### Exemplo de Uso em Python
+
+```python
+import pandas as pd
+import json
+
+# Carregar dados do CSV
+df = pd.read_csv('data/base_dados.csv')
+
+# Análise rápida
+print(df.describe())
+print(df['Plan'].value_counts())
+
+# Carregar JSON
+with open('data/sheets_data.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+    print(f"Total de registros: {len(data)}")
+```
+
+## 🛠️ Tecnologias e Ferramentas
+
+### Análise de Dados
+- **Microsoft Excel**: Dashboard e visualizações
+- **Tabelas Dinâmicas**: Agregação e sumarização de dados
 - **Gráficos Dinâmicos**: Visualizações interativas
-- **Formatação Condicional**: Destaque de informações relevantes
+- **Formatação Condicional**: Destaque de informações críticas
 
-## 📚 Aprendizados
+### Processamento de Dados
+- **Python**: Manipulação e limpeza de dados
+- **Pandas**: Análise de dados estruturados
+- **JSON**: Serialização de dados
 
-Este projeto demonstra competências em:
+## 📚 Competências Demonstradas
 
-- ✅ Organização e estruturação de dados
-- ✅ Análise exploratória de dados (EDA)
-- ✅ Criação de dashboards visuais
-- ✅ Uso de tabelas dinâmicas para análise
-- ✅ Design de informação e UX de dashboards
-- ✅ Documentação técnica de projetos
+Este projeto evidencia habilidades em:
+
+- ✅ **Análise Exploratória de Dados (EDA)**
+- ✅ **Business Intelligence (BI)**
+- ✅ **Data Visualization**
+- ✅ **Dashboard Design**
+- ✅ **Excel Avançado** (tabelas dinâmicas, gráficos, fórmulas)
+- ✅ **Storytelling com Dados**
+- ✅ **Documentação Técnica**
+- ✅ **Gestão de Repositórios Git**
+
+## 🔄 Atualizações Futuras
+
+- [ ] Integração com Power BI para dashboards interativos online
+- [ ] Análise preditiva com Machine Learning
+- [ ] API REST para consulta de dados
+- [ ] Automação de relatórios com Python
+- [ ] Análise de churn e retenção de clientes
+- [ ] Dashboard web interativo com Streamlit ou Dash
 
 ## 🤝 Contribuindo
 
 Contribuições são bem-vindas! Para contribuir:
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add: nova análise de dados'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+1. Faça um **fork** do projeto
+2. Crie uma **branch** para sua feature
+   ```bash
+   git checkout -b feature/MinhaNovaAnalise
+   ```
+3. **Commit** suas mudanças
+   ```bash
+   git commit -m 'Add: análise de churn por plano'
+   ```
+4. Faça **push** para a branch
+   ```bash
+   git push origin feature/MinhaNovaAnalise
+   ```
+5. Abra um **Pull Request**
+
+### Diretrizes de Contribuição
+
+- Mantenha o código limpo e documentado
+- Atualize o README.md se adicionar novas funcionalidades
+- Teste suas mudanças antes de submeter
+- Use commits semânticos (feat, fix, docs, style, refactor)
 
 ## 📝 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença **MIT**. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 👤 Autor
 
 **Marcus Vasconcellos**
 
-- GitHub: [@celloweb-ai](https://github.com/celloweb-ai)
-- LinkedIn: [marcusvasconcellos](https://www.linkedin.com/in/marcusvasconcellos)
-- Email: marcus@vasconcellos.net.br
+- 🌐 GitHub: [@celloweb-ai](https://github.com/celloweb-ai)
+- 💼 LinkedIn: [marcusvasconcellos](https://www.linkedin.com/in/marcusvasconcellos)
+- 📧 Email: marcus@vasconcellos.net.br
 
-## 🎓 Projeto Desenvolvido
+## 🎓 Contexto Acadêmico
 
-Projeto desenvolvido como parte do bootcamp **DIO - CAIXA - Artificial Intelligence in Practice**.
+Projeto desenvolvido como parte do bootcamp **DIO - CAIXA - Inteligência Artificial na Prática**, demonstrando aplicação prática de conceitos de análise de dados, business intelligence e visualização de informações.
+
+## 📊 Estatísticas do Projeto
+
+![GitHub repo size](https://img.shields.io/github/repo-size/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass)
+![GitHub last commit](https://img.shields.io/github/last-commit/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass)
+![GitHub issues](https://img.shields.io/github/issues/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass)
+![GitHub stars](https://img.shields.io/github/stars/celloweb-ai/Dashboard_Vendas_Xbox_Game_Pass?style=social)
 
 ---
 
-⭐ Se este projeto foi útil para você, considere dar uma estrela!
+<div align="center">
 
-📫 Sugestões e feedback são sempre bem-vindos!
+⭐ **Se este projeto foi útil para você, considere dar uma estrela!**
+
+📫 **Sugestões e feedback são sempre bem-vindos!**
+
+**Desenvolvido com 💚 e Excel**
+
+</div>
